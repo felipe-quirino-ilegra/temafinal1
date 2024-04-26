@@ -1,0 +1,41 @@
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Clone repository') {
+            steps {
+                git branch: 'master', url: "https://github.com/felipe-quirino-ilegra/temafinal1.git"
+            }
+        }
+
+        stage('Test application') {
+            steps {
+                sh './gradlew test'
+            }
+        }
+
+        stage('Build application') {
+            steps {
+                sh './gradlew build'
+            }
+        }
+
+        stage('Publish artifactory') {
+            steps {
+                rtUpload (
+                    serverId: "temafinal1",
+                    spec: """{
+                                "files": [
+                                    {
+                                        "pattern": "build/libs/temafinal1-0.0.1-SNAPSHOT.war",
+                                        "target": "temafinal1"
+                                    }
+                                ]
+                    }"""
+                )
+            }
+        }
+    }
+}
