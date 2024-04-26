@@ -12,13 +12,13 @@ pipeline {
 
         stage('Test application') {
             steps {
-                sh './gradlew test'
+                bat './gradlew test'
             }
         }
 
         stage('Build application') {
             steps {
-                sh './gradlew build'
+                bat './gradlew build'
             }
         }
 
