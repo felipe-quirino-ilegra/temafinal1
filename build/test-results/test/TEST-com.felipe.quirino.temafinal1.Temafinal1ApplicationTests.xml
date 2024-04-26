@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.felipe.quirino.temafinal1.Temafinal1ApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-23T19:19:07" hostname="DESKTOP-N75N6PS" time="0.593">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.felipe.quirino.temafinal1.Temafinal1ApplicationTests" time="0.593"/>
+  <system-out><![CDATA[16:19:06.647 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.felipe.quirino.temafinal1.Temafinal1ApplicationTests]: Temafinal1ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:19:06.720 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.felipe.quirino.temafinal1.Temafinal1Application for test class com.felipe.quirino.temafinal1.Temafinal1ApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-04-23T16:19:07.011-03:00  INFO 22648 --- [temafinal1] [    Test worker] c.f.q.t.Temafinal1ApplicationTests       : Starting Temafinal1ApplicationTests using Java 17.0.10 with PID 22648 (started by admin in E:\documentos\aprogramacao\ilegra\temafinal-01)
+2024-04-23T16:19:07.012-03:00  INFO 22648 --- [temafinal1] [    Test worker] c.f.q.t.Temafinal1ApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T16:19:07.818-03:00  INFO 22648 --- [temafinal1] [    Test worker] c.f.q.t.Temafinal1ApplicationTests       : Started Temafinal1ApplicationTests in 0.971 seconds (process running for 1.898)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
