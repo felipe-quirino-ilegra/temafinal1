@@ -25,7 +25,7 @@ pipeline {
         stage('Publish artifactory') {
             steps {
                 rtUpload (
-                    serverId: "temafinal1",
+                    serverId: "temafinal-1",
                     spec: """{
                                 "files": [
                                     {
