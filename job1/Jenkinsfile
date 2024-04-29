@@ -29,7 +29,7 @@ pipeline {
                     spec: """{
                                 "files": [
                                     {
-                                        "pattern": "build/libs/temafinal1-0.0.1-SNAPSHOT.war",
+                                        "pattern": "build/libs/helloworld.war",
                                         "target": "temafinal1"
                                     }
                                 ]

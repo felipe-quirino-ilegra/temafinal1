@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class temafinal1Controller {
 
-    @GetMapping("/")
+    @GetMapping("/ini")
     public String obterMensagem() {
         return " \n" +
                 " +-+-+-+ +-+-+-+-+ +-+-+-+-+-+ +-+ +-+-+-+-+-+-+-+-+-+-+-+\n" +
