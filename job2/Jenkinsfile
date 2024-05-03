@@ -1,0 +1,33 @@
+pipeline {
+
+    agent any
+
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+        DOCKERHUB_REPOSITORY_NAME = 'fq1444/tema-final-01'
+    }
+    stages {
+
+        stage('Get artifact from JFrog server') {
+            steps {
+                rtDownload (
+                    serverId: "temafinal1",
+                    spec: """{
+                        "files": [
+                            {
+                                "pattern": "temafinal1/helloworld.war",
+                                "target": "job1/build/libs/helloworld.war"
+                            }
+                        ]
+                    }"""
+                )
+            }
+        }
+
+        stage('Packer build') {
+            steps {
+                bat 'packer build  -var "dockerhub_repository_name=$DOCKERHUB_REPOSITORY_NAME" -var "dockerhub_username=$DOCKERHUB_CREDENTIALS_USR" -var "dockerhub_user_password=$DOCKERHUB_CREDENTIALS_PSW" "job2/packerConfig.json"'
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+---
+- name: install tomcat server
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install OpenJDK 11
+      apt:
+        name: openjdk-11-jre-headless
+
+    - name: Download Tomcat server packages
+      get_url:
+        url: https://mirror.nbtelecom.com.br/apache/tomcat/tomcat-9/v9.0.52/bin/apache-tomcat-9.0.52.tar.gz
+        dest: /
+
+    - name: Extract Tomcat packages
+      unarchive:
+        src: /apache-tomcat-9.0.52.tar.gz
+        dest: /
+        remote_src: yes
