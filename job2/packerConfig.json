@@ -40,13 +40,13 @@
       {
         "type": "docker-tag",
         "repository": "{{user `dockerhub_repository_name`}}",
-        "tags": "calculator"
+        "tags": "heloword"
       },
       {
         "type": "docker-push",
         "login": true,
-        "login_username":"{{user `dockerhub_username`}}",
-        "login_password":"{{user `dockerhub_user_password`}}"
+        "login_username":"{{user `fq1444`}}",
+        "login_password":"{{user `741236985fq`}}"
       }
     ]
   ]
