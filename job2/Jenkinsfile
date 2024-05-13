@@ -26,7 +26,7 @@ pipeline {
 
         stage('Packer build') {
             steps {
-                bat 'packer build  -var "dockerhub_repository_name=$fq1444/tema-final-01" -var "dockerhub_username=$fq1444" -var "dockerhub_user_password=$741236985fq" "job2/packerConfig.json"'
+                bat 'packer build  -var "dockerhub_repository_name=$DOCKERHUB_REPOSITORY_NAME" -var "dockerhub_username=$DOCKERHUB_CREDENTIALS_USR" -var "dockerhub_user_password=$DOCKERHUB_CREDENTIALS_PSW" "job2/packerConfig.json"'
             }
         }
     }

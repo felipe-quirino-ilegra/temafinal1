@@ -1,8 +1,8 @@
 {
   "variables": {
-    "dockerhub_repository_name":"",
-    "dockerhub_username":"",
-    "dockerhub_user_password":""
+    "dockerhub_repository_name":"fq1444/tema-final-01",
+    "dockerhub_username":"fq1444",
+    "dockerhub_user_password":"741236985fq"
   },
 
   "builders": [
@@ -26,11 +26,11 @@
     },
     {
       "type": "ansible-local",
-      "playbook_file": "/var/lib/jenkins/workspace/job2-provision/job2/playbook.yml"
+      "playbook_file": "C:/ProgramData/Jenkins/.jenkins/workspace/job2/job2/playbook.yml"
     },
     {
       "type": "file",
-      "source": "/var/lib/jenkins/workspace/job2-provision/job1/build/libs/helloworld.war",
+      "source": "C:/ProgramData/Jenkins/.jenkins/workspace/job1/build/libs/helloworld.war",
       "destination": "/apache-tomcat-9.0.52/webapps/helloworld.war"
     }
   ],
