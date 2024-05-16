@@ -11,7 +11,7 @@
       "image": "ubuntu:20.04",
       "commit": true,
       "changes": [
-        "EXPOSE 8080",
+        "EXPOSE 8083",
         "CMD [\"apache-tomcat-9.0.52/bin/catalina.sh\",\"run\"]"
       ]
     }
@@ -26,11 +26,11 @@
     },
     {
       "type": "ansible-local",
-      "playbook_file": "C:/ProgramData/Jenkins/.jenkins/workspace/job2/job2/playbook.yml"
+      "playbook_file": "C:/ProgramData/Jenkins/.jenkins/workspace/job-2/job2/playbook.yml"
     },
     {
       "type": "file",
-      "source": "C:/ProgramData/Jenkins/.jenkins/workspace/job1/build/libs/helloworld.war",
+      "source": "C:/ProgramData/Jenkins/.jenkins/workspace/job-2/job2/build/libs/helloworld.war",
       "destination": "/apache-tomcat-9.0.52/webapps/helloworld.war"
     }
   ],
