@@ -1,52 +1,42 @@
 {
-  "variables": {
-    "dockerhub_repository_name":"fq1444/tema-final-01",
-    "dockerhub_username":"fq1444",
-    "dockerhub_user_password":"741236985fq"
-  },
-
   "builders": [
     {
       "type": "docker",
-      "image": "ubuntu:20.04",
+      "image": "tomcat:9.0",
+      "message": "add job2",
       "commit": true,
+      "run_command": [
+        "--detach",
+        "{{ .Image }}"
+      ],
       "changes": [
-        "EXPOSE 8083",
-        "CMD [\"apache-tomcat-9.0.52/bin/catalina.sh\",\"run\"]"
+        "EXPOSE 8083"
       ]
     }
   ],
-
   "provisioners": [
     {
-      "type": "shell",
-      "inline": [
-        "apt update", "apt install ansible -y"
-      ]
-    },
-    {
-      "type": "ansible-local",
-      "playbook_file": "C:/ProgramData/Jenkins/.jenkins/workspace/job-2/job2/playbook.yml"
-    },
-    {
       "type": "file",
-      "source": "C:/ProgramData/Jenkins/.jenkins/workspace/job-2/job2/build/libs/helloworld.war",
-      "destination": "/apache-tomcat-9.0.52/webapps/helloworld.war"
+      "source": "/.jenkins/workspace/Job-2/build/libs/helloworld.war/",
+      "destination": "/usr/local/tomcat/webapps/"
+    },
+    {
+      "type": "ansible",
+      "playbook_file": "C:/ProgramData/Jenkins/.jenkins/workspace/job-2/job2/playbook.yml"
     }
   ],
-
   "post-processors": [
     [
       {
         "type": "docker-tag",
-        "repository": "{{user `dockerhub_repository_name`}}",
-        "tags": "heloword"
+        "repository": "fq1444/tema-final-01",
+        "tag": "latest"
       },
       {
         "type": "docker-push",
         "login": true,
-        "login_username":"{{user `dockerhub_username`}}",
-        "login_password":"{{user `dockerhub_user_password`}}"
+        "login_username": "fq1444",
+        "login_password": "741236985fq"
       }
     ]
   ]
