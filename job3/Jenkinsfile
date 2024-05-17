@@ -5,13 +5,13 @@ pipeline {
    stages {
       stage('Download image from Docker Hub') {
          steps {
-            bat 'docker pull fq1444/tema-final-01:helloworld'
+            bat 'docker pull fq1444/tema-final-01'
          }
       }
 
       stage('Run Docker image') {
          steps {
-            bat 'docker run -p 8085:8085 -d fq1444/tema-final-01:helloworld'
+            bat 'docker run -p 8085:8085 -d fq1444/tema-final-01'
          }
       }
    }
