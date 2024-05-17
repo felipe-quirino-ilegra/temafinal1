@@ -26,7 +26,7 @@ pipeline {
 
         stage('Packer build') {
             steps {
-
+                bat 'packer init docker-with-jar.pkr.hcl'
                 bat 'packer build  "C:/ProgramData/Jenkins/.jenkins/workspace/job2/job2/docker-with-jar.pkr.hcl"'
             }
         }
