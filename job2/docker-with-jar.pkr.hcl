@@ -45,7 +45,7 @@ build {
     inline = [
       "apt-get update",
       "apt-get install ansible -y",
-      "ls -l ./build/libs"  # Adicione o comando ls aqui para listar o conteúdo do diretório
+
     ]
   }
 
