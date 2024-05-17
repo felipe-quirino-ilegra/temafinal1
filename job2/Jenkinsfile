@@ -26,7 +26,8 @@ pipeline {
 
         stage('Packer build') {
             steps {
-                bat 'packer build  -var "dockerhub_repository_name=$DOCKERHUB_REPOSITORY_NAME" -var "dockerhub_username=$DOCKERHUB_CREDENTIALS_USR" -var "dockerhub_user_password=$DOCKERHUB_CREDENTIALS_PSW" "job2/packerConfig.json"'
+                bat 'packer init docker-with-jar.pkr.hcl'
+                bat 'packer build  -var "dockerhub_repository_name=$DOCKERHUB_REPOSITORY_NAME" -var "dockerhub_username=$DOCKERHUB_CREDENTIALS_USR" -var "dockerhub_user_password=$DOCKERHUB_CREDENTIALS_PSW" docker-with-jar.pkr.hcl'
             }
         }
     }
