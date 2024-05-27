@@ -11,7 +11,7 @@ pipeline {
 
       stage('Run Docker image') {
          steps {
-            bat 'docker run -p 8080:8083 -d fq1444/tema-final-01'
+            bat 'docker run -p 8083:8083 -d fq1444/tema-final-01'
          }
       }
    }
