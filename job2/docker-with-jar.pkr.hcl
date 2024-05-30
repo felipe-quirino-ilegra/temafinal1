@@ -27,12 +27,12 @@ source "docker" "ubuntu" {
 
 variable "username" {
   type = string
-  default = "fq1444"
+  default = "escreva-aqui-seu-username"
 }
 
 variable "password" {
   type = string
-  default = "741236985fq"
+  default = "escreva-aqui-seu-password"
 }
 
 build {
